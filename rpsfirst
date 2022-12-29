@@ -1,0 +1,20 @@
+import random
+def choices_made():
+    player_choice = input("Please enter rock or paper or scissors : ")
+    options = ["rock","paper","scissors"]
+    computer_choice = random.choice(options)
+    choices = {"player" : player_choice , "computer" : computer_choice}
+    return choices
+
+def check_win(player , computer):
+    print(f"You chose {player} , Computer chose {computer}" )
+    if player == computer:
+        return "Its a tie"
+    elif player == "rock" and computer == "scissors":
+        return "Player Won"
+    else:
+         return "Computer Won"
+
+choices = choices_made()
+result = check_win(choices["player"],choices["computer"])
+print(result)
